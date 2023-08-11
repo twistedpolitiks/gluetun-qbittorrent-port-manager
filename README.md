@@ -29,6 +29,7 @@ Finally, add the following snippet to your `docker-compose.yml`, substituting th
       QBITTORRENT_USER: admin
       QBITTORRENT_PASS: adminadmin
       PORT_FORWARDED: /tmp/gluetun/forwarded_port
+      HTTP_HTTPS: http(s)
 
 ...
 ```
