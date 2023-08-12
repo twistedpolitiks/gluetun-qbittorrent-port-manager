@@ -5,8 +5,8 @@ build: Dockerfile start.sh
 	docker build -t $(NAME):latest --label "version=$(VERSION)" .
 
 push: Dockerfile start.sh version .secret
-	cat .secret | docker login -u snoringdragon --password-stdin
-	docker tag $(NAME):latest snoringdragon/$(NAME):$(VERSION)
-	docker push snoringdragon/$(NAME):$(VERSION)
-	docker tag $(NAME):latest snoringdragon/$(NAME):latest
-	docker push snoringdragon/$(NAME):latest
+	cat .secret | docker login -u twistedpolitiks --password-stdin
+	docker tag $(NAME):latest twistedpolitiks/$(NAME):$(VERSION)
+	docker push twistedpolitiks/$(NAME):$(VERSION)
+	docker tag $(NAME):latest twistedpolitiks/$(NAME):latest
+	docker push twistedpolitiks/$(NAME):latest
