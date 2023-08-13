@@ -18,6 +18,4 @@ RUN chmod 770 ./start.sh
 
 CMD /usr/bin/echo ${QBITTORRENT_IP} ${QBITTORRENT_SERVER} ${QBITTORRENT_HOSTNAME} >> /etc/hosts
 
-RUN update-ca-certificates
-
 CMD ["./start.sh"]
