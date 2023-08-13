@@ -1,6 +1,7 @@
 #!/bin/bash
 
 COOKIES="/tmp/cookies.txt"
+COUNT="0"
 
 update_port () {
   PORT=$(cat $PORT_FORWARDED)
@@ -10,6 +11,11 @@ update_port () {
   rm -f $COOKIES
   echo "Successfully updated qbittorrent to port $PORT"
 }
+
+while [ $COUNT -lt 1 ]; do
+  update-ca-certificates
+  let COUNT=COUNT+1
+done
 
 while true; do
   if [ -f $PORT_FORWARDED ]; then
