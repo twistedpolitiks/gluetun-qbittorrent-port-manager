@@ -2,7 +2,7 @@
 FROM ubuntu:jammy
 
 RUN apt update
-RUN apt install --yes --quiet curl inotify-tools
+RUN apt install --yes --quiet curl inotify-tools echo
 
 ENV QBITTORRENT_SERVER=localhost
 ENV QBITTORRENT_IP=127.0.0.1
