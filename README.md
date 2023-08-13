@@ -22,9 +22,11 @@ Finally, add the following snippet to your `docker-compose.yml`, substituting th
     restart: unless-stopped
     volumes:
       - /yourfolder:/tmp/gluetun #Set "yourfolder" to the same directory you used for Gluetun
+      - /locationofca.crt:/usr/local/share/ca-certificates
     network_mode: "service: gluetun"
     environment:
       QBITTORRENT_SERVER: localhost
+      QBITTORRENT_HOSTNAME: localhost
       QBITTORRENT_PORT: 8080
       QBITTORRENT_USER: admin
       QBITTORRENT_PASS: adminadmin
