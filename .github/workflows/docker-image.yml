@@ -18,7 +18,8 @@ jobs:
       run: docker build . --file Dockerfile --tag twistedpolitiks/gluetun-qbittorrent-port-manager:${{ github.sha }}
     - name: docker login
       env: 
+        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PAT: ${{secrets.DOCKER_PAT}}
-      run: docker login -u $DOCKER_PAT
+      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PAT
     - name: Docker Push
       run: docker push twistedpolitiks/gluetun-qbittorrent-port-manager:${{ github.sha }}
