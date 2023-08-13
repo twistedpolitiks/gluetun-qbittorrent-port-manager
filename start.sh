@@ -14,6 +14,7 @@ update_port () {
 
 while [ $COUNT -lt 1 ]; do
   update-ca-certificates
+  echo ${QBITTORRENT_IP} ${QBITTORRENT_SERVER} ${QBITTORRENT_HOSTNAME} >> /etc/hosts; 
   let COUNT=COUNT+1
 done
 
