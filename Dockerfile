@@ -16,4 +16,4 @@ ENV HTTP_HTTPS=https
 COPY ./start.sh ./start.sh
 RUN chmod 770 ./start.sh
 
-CMD /usr/bin/echo ${QBITTORRENT_IP} ${QBITTORRENT_SERVER} ${QBITTORRENT_HOSTNAME} >> /etc/hosts; ["./start.sh"]
+CMD ["./start.sh"]
