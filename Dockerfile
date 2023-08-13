@@ -16,7 +16,7 @@ ENV HTTP_HTTPS=https
 COPY ./start.sh ./start.sh
 RUN chmod 770 ./start.sh
 
-RUN /usr/bin/echo ${QBITTORRENT_IP} ${QBITTORRENT_SERVER} ${QBITTORRENT_HOSTNAME} >> /etc/hosts
+CMD /usr/bin/echo ${QBITTORRENT_IP} ${QBITTORRENT_SERVER} ${QBITTORRENT_HOSTNAME} >> /etc/hosts
 
 RUN update-ca-certificates
 
