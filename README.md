@@ -1,4 +1,6 @@
-# gluetun-qbittorrent Port Manager
+## Forked from https://github.com/SnoringDragon/gluetun-qbittorrent-port-manager ##
+
+# gluetun-qbittorrent Port Manager with HTTPS capabilities
 Automatically updates the listening port for qbittorrent to the port forwarded by [Gluetun](https://github.com/qdm12/gluetun/).
 
 ### Description
@@ -12,26 +14,6 @@ First, ensure you are able to successfully connect qbittorrent to the forwarded 
 
 Then add a mounted volume to [Gluetun](https://github.com/qdm12/gluetun/) (e.g. /yourfolder:/tmp/gluetun).
 
-Finally, add the following snippet to your `docker-compose.yml`, substituting the default values for your own.
+Next, add another mounted volume to add personal ca.crt if using self-signed certs and you want the green checkmark!
 
-```yml
-...
-
-  gluetun-qbittorrent-port-manager:
-    image: snoringdragon/gluetun-qbittorrent-port-manager:latest
-    restart: unless-stopped
-    volumes:
-      - /yourfolder:/tmp/gluetun #Set "yourfolder" to the same directory you used for Gluetun
-      - /locationofca.crt:/usr/local/share/ca-certificates
-    network_mode: "service: gluetun"
-    environment:
-      QBITTORRENT_SERVER: localhost
-      QBITTORRENT_HOSTNAME: localhost
-      QBITTORRENT_PORT: 8080
-      QBITTORRENT_USER: admin
-      QBITTORRENT_PASS: adminadmin
-      PORT_FORWARDED: /tmp/gluetun/forwarded_port
-      HTTP_HTTPS: http(s)
-
-...
-```
+Finally, use the docker-compoase.yml template to add it into your existing compose file that includes gluetun
