@@ -1,7 +1,7 @@
 # gluetun-qbittorrent Port Manager
 Automatically updates the listening port for qbittorrent to the port forwarded by [Gluetun](https://github.com/qdm12/gluetun/).
 
-## Description
+### Description
 [Gluetun](https://github.com/qdm12/gluetun/) has the ability to forward ports for supported VPN providers, 
 but qbittorrent does not have the ability to update its listening port dynamically.
 Because of this, I wrote this short script available as a docker container which automatically detects changes to the 
