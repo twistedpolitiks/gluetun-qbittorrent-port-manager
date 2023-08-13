@@ -2,7 +2,7 @@
 FROM ubuntu:jammy
 
 RUN apt update
-RUN apt install --yes --quiet curl inotify-tools echo
+RUN apt install --yes --quiet curl inotify-tools
 
 ENV QBITTORRENT_SERVER=localhost
 ENV QBITTORRENT_IP=127.0.0.1
@@ -16,7 +16,7 @@ ENV HTTP_HTTPS=https
 COPY ./start.sh ./start.sh
 RUN chmod 770 ./start.sh
 
-RUN echo ${QBITTORRENT_IP} ${QBITTORRENT_SERVER} ${QBITTORRENT_HOSTNAME} >> /etc/hosts
+RUN /usr/bin/echo ${QBITTORRENT_IP} ${QBITTORRENT_SERVER} ${QBITTORRENT_HOSTNAME} >> /etc/hosts
 
 RUN update-ca-certificates
 
