@@ -7,9 +7,7 @@
       - /docker/gluetun-qbittorrent-port-manager/certs:/usr/local/share/ca-certificates # Add your local CA authority certificate here, comment out or remove if using http
     network_mode: "service:gluetun"
     environment:
-      - QBITTORRENT_SERVER=hostname.subdomain.tld # Make sure this is a reachable https address if using SSL. Comment out or delete if using http
-      - QBITTORRENT_HOSTNAME=hosthame # Make sure this is a reachable hostname if using SSL. Comment out or delete if using http
-      - QBITTORRENT_IP=xxx.xxx.xxx # IP used to add to /etc/hosts for out of docker network access. Comment out or delete if using http
+      - QBITTORRENT_SERVER=xxx.xxx.xxx # IP used to add to /etc/hosts for out of docker network access. Comment out or delete if using http
       - QBITTORRENT_PORT=8080
       - QBITTORRENT_USER=${QBITTORRENT_USER}
       - QBITTORRENT_PASS=${QBITTORRENT_PASS}
