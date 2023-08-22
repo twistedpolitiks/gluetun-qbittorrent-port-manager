@@ -5,8 +5,6 @@ RUN apt update
 RUN apt install --yes --quiet curl inotify-tools
 
 ENV QBITTORRENT_SERVER=localhost
-ENV QBITTORRENT_IP=127.0.0.1
-ENV QBITTORRENT_HOSTNAME=localhost
 ENV QBITTORRENT_PORT=8080
 ENV QBITTORRENT_USER=admin
 ENV QBITTORRENT_PASS=adminadmin
