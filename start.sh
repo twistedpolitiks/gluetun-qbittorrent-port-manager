@@ -20,9 +20,7 @@ done
 while true; do
   if [ -f $PORT_FORWARDED ]; then
     update_port
-    inotifywait -mq -e close_write $PORT_FORWARDED | while read change; do
-      update_port
-    done
+    sleep 60
   else
     echo "Couldn't find file $PORT_FORWARDED"
     echo "Trying again in 10 seconds"
